@@ -10,7 +10,7 @@
 - `I am using TSOA package for my side project because I need to implement a file management feature. This way, 
 even if I don't pass the technical test, I can still make use of this functionality in my project.`
 
-![bad_luck](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmY3MzRhNDU5YzgyNTk1NTI2NTI1MTE3MzQ3MmUwNDUyZWRkZTk0OSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/3o7aCZDlmQZLe4Q4V2/giphy.gif)
+![bad_luck](https://www.gifcen.com/wp-content/uploads/2021/06/meme-gif-4.gif)
 
 #### Routes
 
