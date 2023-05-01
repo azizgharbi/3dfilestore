@@ -56,9 +56,12 @@ Project root:
 
 Update migration schema:
 
-- `prisma migrate dev --name add_description`.
-- `prisma migrate reset`.
-- `prisma generate`.
+
+- Rest database in case: `yarn prisma migrate reset`.
+
+- Migrate: `yarn prisma migrate dev --name [description]`.
+
+- Generate `prisma client`: `yarn prisma generate`.
 
 
 ### Demo
