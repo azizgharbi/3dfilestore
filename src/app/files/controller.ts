@@ -1,13 +1,13 @@
 import {
-  Controller,
-  Body,
-  Get,
-  Post,
-  Delete,
-  Put,
-  UploadedFile,
-  Route,
-  Tags,
+	Controller,
+	Body,
+	Get,
+	Post,
+	Delete,
+	Put,
+	UploadedFile,
+	Route,
+	Tags,
 } from "tsoa";
 import FileService from "./service";
 import { File } from "@prisma/client";
@@ -17,71 +17,71 @@ import fs from "fs";
 @Tags("Files")
 @Route("/api/v1/files")
 export class FilesController extends Controller {
-  /*
-   * File Controller
-   */
-  @Get()
-  public async getFiles(): Promise<File[]> {
-    const files = FileService.getAllFiles();
-    return files;
-  }
+	/*
+	 * File Controller
+	 */
+	@Get()
+	public async getFiles(): Promise<File[]> {
+		const files = FileService.getAllFiles();
+		return files;
+	}
 
-  @Post('/upload')
-  public async upload(
-    @UploadedFile('file') file: Express.Multer.File,
-  ): Promise<File> {
-    const savedFile = FileService.save({
-      name: file.filename,
-      size: file.size,
-      path: file.destination,
-      creation_date: new Date().toString(),
-    });
-    return savedFile;
-  }
+	@Post('/upload')
+	public async upload(
+		@UploadedFile('file') file: Express.Multer.File,
+	): Promise<File> {
+		const savedFile = FileService.save({
+			name: file.filename,
+			size: file.size,
+			path: file.destination,
+			creation_date: new Date().toString(),
+		});
+		return savedFile;
+	}
 
-  @Get('/download/:id')
-  public async downloadFile(id: number) {
-    const file = await FileService.get(id);
+	@Get('/download/:id')
+	public async downloadFile(id: number) {
+		const file = await FileService.get(id);
 
-    if (!file || !fs.existsSync(file.path)) {
-      throw new Error("Error file Not found");
-    }
+		if (!file || !fs.existsSync(file.path)) {
+			throw new Error("Error file Not found");
+		}
 
-    const dist = `${file.path}/${file.name}`;
-    this.setHeader("Content-Disposition", `attachment; filename=${file.name}`);
-    this.setHeader("Content-Type", "text/plain");
-    return fs.createReadStream(dist);
-  }
+		const dist = `${file.path}/${file.name}`;
+		this.setHeader("Content-Disposition", `attachment; filename=${file.name}`);
+		this.setHeader("Content-Type", "text/plain");
+		return fs.createReadStream(dist);
+	}
 
-  @Put('/rename')
-  public async renameFile(@Body() req: renameRequest) {
-    try {
-      const file = await FileService.get(req.id);
+	@Put('/rename')
+	public async renameFile(@Body() req: renameRequest) {
+		try {
+			const file = await FileService.get(req.id);
 
-      const newFileName = `${Date.now()}-${req.new_name}.obj`;
-      const renamedFile = await FileService.update(req.id, {
-        name: newFileName,
-      });
+			const newFileName = `${Date.now()}-${req.new_name}.obj`;
+			const renamedFile = await FileService.update(req.id, {
+				name: newFileName,
+			});
 
-      fs.renameSync(`${file.path}/${file.name}`, `${file.path}/${newFileName}`);
+			fs.renameSync(`${file.path}/${file.name}`, `${file.path}/${newFileName}`);
 
-      return renamedFile;
-    } catch (err) {
-      throw new Error("Error renaming the file");
-    }
-  }
+			return renamedFile;
+		} catch (err) {
+			throw new Error("Error renaming the file");
+		}
+	}
 
-  @Delete('/delete/:id')
-  public async deleteFile(id: number) {
-    try {
-      const file = await FileService.delete(id);
-      const filePath = `${file.path}/${file.name}`;
+	@Delete('/delete/:id')
+	public async deleteFile(id: number) {
+		try {
+			const file = await FileService.delete(id);
+			const filePath = `${file.path}/${file.name}`;
 
-      fs.unlinkSync(filePath);
+			fs.unlinkSync(filePath);
 
-      return file;
-    } catch (err) {
-      throw new Error("Error deleting the file");
-    }
-  }
+			return file;
+		} catch (err) {
+			throw new Error("Error deleting the file");
+		}
+	}
 }
