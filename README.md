@@ -5,9 +5,9 @@
 - `Typescript`
 - `Tsoa`
 
-#### Why `tsoa` and not `nestjs`  ?
+#### Why `tsoa` and not a shiny framework like `nestjs`, Why using `postgres` ?
 
-- `I am using TSOA package for my side project because I need to implement a file management feature. This way, 
+- `I am using TSOA package and postgres for my side project because I need to implement a file management features. This way, 
 even if I don't pass the technical test, I can still make use of this functionality in my project.`
 
 ![bad_luck](https://www.gifcen.com/wp-content/uploads/2021/06/meme-gif-4.gif)
@@ -28,7 +28,7 @@ even if I don't pass the technical test, I can still make use of this functional
 ### Nice to have:
 
 - `Unit test` : I need more time.
-- `Download a transformed file` :I need more time.
+- `Download a transformed file` : I need more time.
 - `Test with the frontend`: I need more time.
 
 ### Routes and validations docs is using `tsoa`
