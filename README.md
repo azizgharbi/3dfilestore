@@ -17,7 +17,7 @@
 #### Routes
 
 - `GET: /api/v1/files`
-- `POST: /api/v1/files/upload`
+- `POST: /api/v1/files/upload` Only `.obj` files
 - `GET: /api/v1/files/download/{id}`
 - `PUT: /api/v1/files/rename`
 - `Delete: /api/v1/files/delete/{id}`
