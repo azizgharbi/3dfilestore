@@ -1,4 +1,4 @@
-### OBJ Wavefront files api [rename, delete, download , upload] using `tsoa` and `express`
+### OBJ Wavefront files api [list, rename, delete, download , upload] using `tsoa` and `express`
 
 - `Nodejs`
 - `Express`
