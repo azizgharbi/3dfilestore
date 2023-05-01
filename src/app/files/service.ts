@@ -16,7 +16,6 @@ class FileService {
 	async getAllFiles(): Promise<File | any> {
 		try {
 			const files = await prisma.file.findMany();
-			console.log(files);
 			return files;
 		} catch (error: any) {
 			throw new ValidateError(error, "Upload method");
