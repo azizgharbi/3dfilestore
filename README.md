@@ -5,10 +5,12 @@
 - `Typescript`
 - `Tsoa`
 
-#### Why `tsoa` and not a shiny framework like `nestjs`, Why using `postgres` ?
+#### Why `tsoa` and not a shiny framework like `Nestjs`, Why using `postgres` ?
 
-- `I am using TSOA package and postgres for my side project because I need to implement a file management features. This way, 
-even if I don't pass the technical test, I can still make use of this functionality in my project.`
+- `I am using TSOA package and PostgreSQL for my side project, where I need to add file management feature. 
+  Thus, even if I don't succeed in the technical assessment, 
+  I can still benefit from this functionality in my project. 
+  I have invested some time in this and there are undoubtedly areas for improvement.`
 
 ![bad_luck](https://www.gifcen.com/wp-content/uploads/2021/06/meme-gif-4.gif)
 
@@ -42,7 +44,10 @@ Database client  `Postgres` with (https://www.prisma.io/)
 
 Under folder `database`:
 
-- `docker-compose up -d`
+- `docker-compose up -d`.
+
+- `Database client url: http://localhost:8080/`.
+- `System: Postgres` , `Username: test`, `Password: test`, `Database: db_test`
 
 Project root: 
 
