@@ -25,7 +25,8 @@
 
 #### Development:
 
-- `yarn run dev`
+- `yarn run dev`.
+- `chmod -R 755 uploads` and `mkdir uploads` folder if not exists.
 
 ### Nice to have:
 
