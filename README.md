@@ -1,4 +1,4 @@
-### OBJ Wavefront files api [list, rename, delete, download , upload] using `tsoa` and `express`
+#### OBJ Wavefront files store:
 
 - `Nodejs`
 - `Express`
@@ -10,13 +10,15 @@
 - `I am using TSOA package for my side project because I need to implement a file management feature. This way, 
 even if I don't pass the technical test, I can still make use of this functionality in my project.`
 
+![bad_luck](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmY3MzRhNDU5YzgyNTk1NTI2NTI1MTE3MzQ3MmUwNDUyZWRkZTk0OSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/3o7aCZDlmQZLe4Q4V2/giphy.gif)
+
 #### Routes
 
-- `/api/v1/files`
-- `/api/v1/files/upload`
-- `/api/v1/files/download/{id}`
-- `/api/v1/files/rename`
--`/api/v1/files/delete/{id}`
+- `GET: /api/v1/files`
+- `POST: /api/v1/files/upload`
+- `GET: /api/v1/files/download/{id}`
+- `PUT: /api/v1/files/rename`
+- `Delete: /api/v1/files/delete/{id}`
 
 
 #### Development:
@@ -25,8 +27,9 @@ even if I don't pass the technical test, I can still make use of this functional
 
 ### Nice to have:
 
-- Unit test : I need more time.
-- Download a transformed file : I need more time.
+- `Unit test` : I need more time.
+- `Download a transformed file` :I need more time.
+- `Test with the frontend`: I need more time.
 
 ### Routes and validations docs is using `tsoa`
 
