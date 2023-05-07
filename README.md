@@ -5,13 +5,6 @@
 - `Typescript`
 - `Tsoa`
 
-#### Why `tsoa` and not a shiny framework like `Nestjs`, Why using `postgres` ?
-
-- `I am using TSOA package and PostgreSQL for my side project, where I need to add file management feature. 
-  Thus, even if I don't succeed in the technical assessment, 
-  I can still benefit from this functionality in my project. 
-  I have invested some time in this and there are undoubtedly areas for improvement.`
-
 ![bad_luck](https://www.gifcen.com/wp-content/uploads/2021/06/meme-gif-4.gif)
 
 #### Routes
