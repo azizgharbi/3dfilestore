@@ -21,12 +21,6 @@
 - `yarn run dev`.
 - `chmod -R 755 uploads` and `mkdir uploads` folder if not exists.
 
-### Nice to have:
-
-- `Unit test` : I need more time.
-- `Download a transformed file` : I need more time.
-- `Test with the frontend`: I need more time.
-
 ### Routes and validations docs is using `tsoa`
 
 - Swagger : `http://localhost:5000/api-docs`

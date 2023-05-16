@@ -63,11 +63,17 @@ export class FilesController extends Controller {
 				name: newFileName,
 			});
 
-			fs.renameSync(`${file.path}/${file.name}`, `${file.path}/${newFileName}`);
+			fs.rename(
+				`${file.path}/${file.name}`,
+				`${file.path}/${newFileName}`,
+				function (err) {
+					throw new Error(`Error: ${err?.message}`);
+				},
+			);
 
 			return renamedFile;
 		} catch (err) {
-			throw new Error("Error renaming the file");
+			throw new Error("Error renaming the file from db");
 		}
 	}
 
@@ -76,12 +82,12 @@ export class FilesController extends Controller {
 		try {
 			const file = await FileService.delete(id);
 			const filePath = `${file.path}/${file.name}`;
-
-			fs.unlinkSync(filePath);
-
+			fs.unlink(filePath, function (err) {
+				throw new Error(`Error: ${err?.message}`);
+			});
 			return file;
 		} catch (err) {
-			throw new Error("Error deleting the file");
+			throw new Error("Error deleting the file from db");
 		}
 	}
 }
